@@ -32,19 +32,7 @@ This project simulates real-time machine/sensor telemetry (like Rotational Speed
 
 ---
 
-## ⚙️ Project Architecture
 
-```mermaid
-graph TD;
-    A[AI4I 2020 Dataset] -->|Training| B(Random Forest Model);
-    C[simulator.py] -->|Generates Live Telemetry| D[(shared_data.json)];
-    B -->|Predicts| E;
-    D -->|Reads s/sec| E[app.py Streamlit Dashboard];
-    E -->|Visualizes| F[Live Probability Gauge];
-    E -->|Visualizes| G[Real-Time Line Charts];
-```
-
----
 
 ## 🔬 Technical Deep Dive & Code Architecture
 
