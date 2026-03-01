@@ -23,8 +23,7 @@ This project simulates real-time machine/sensor telemetry (like Rotational Speed
 
 <div align="center">
   
-  <!-- Add your visual animated GIF demonstrating the UI here -->
-  <img src="https://via.placeholder.com/800x400.png?text=Replace+This+With+Your+App.gif" alt="Predictive Maintenance GIF Demo" width="800"/>
+![Live Demo](PMMS.gif)
   
 </div>
 
@@ -114,3 +113,4 @@ Predictive-Maintenance-System/
 ## 🤝 Contribution & License
 Contributions, issues, and feature requests are welcome! 
 This project is open-source and available under the [MIT License](LICENSE).
+
