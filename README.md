@@ -86,11 +86,14 @@ python src/train_model.py
 
 # 2. Start the Frontend Dashboard (Terminal 1)
 streamlit run src/app.py
+```
+*Open the provided Local URL (`http://localhost:8505`) in your browser. The dashboard will wait for live data.*
 
+```bash
 # 3. Trigger the Machine Simulator (Terminal 2)
 python src/simulator.py
 ```
-*Open the provided Local URL in your browser, click **Start Live Tracking**, and watch the live telemetry.*
+*As soon as the simulator starts, the dashboard will dynamically plot the real-time telemetry.*
 
 ---
 
@@ -113,4 +116,3 @@ Predictive-Maintenance-System/
 ## 🤝 Contribution & License
 Contributions, issues, and feature requests are welcome! 
 This project is open-source and available under the [MIT License](LICENSE).
-
