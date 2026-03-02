@@ -55,10 +55,8 @@ During the development phase, we evaluated multiple classification algorithms to
 
 <br>
 
-<div align="center">
-  <img src="models/confusion_matrix.png" alt="Random Forest Confusion Matrix" width="450"/>
-  <br>
-  <i>Fig 1: Confusion Matrix demonstrating the model's distinction between Normal Operation (0) and Imminent Failure (1).</i>
+![Screenshot](confusion_matrix.png)
+
 </div>
 
 <br>
@@ -136,3 +134,4 @@ Predictive-Maintenance-System/
 ## 🤝 Contribution & License
 Contributions, issues, and feature requests are welcome! 
 This project is open-source and available under the [MIT License](LICENSE).
+
