@@ -43,6 +43,26 @@ At the core of our predictions lies the `AI4I 2020 Predictive Maintenance Datase
 * **Imbalance Handling:** In real-world data, physical failures are rare anomalies. We tackle this distribution imbalance using `class_weight='balanced'` within the `RandomForestClassifier` pipeline.
 * **Pipeline Export:** The fully fitted `StandardScaler` and `RandomForest` are bundled together via `sklearn.pipeline` and serialized using `joblib` into the `models/` directory for live inference.
 
+#### Model Evaluation & Algorithm Selection
+During the development phase, we evaluated multiple classification algorithms to determine the best fit for this specific industrial dataset. While Logistic Regression struggled with the non-linear relationships of sensor data, **XGBoost** and **Random Forest** performed exceptionally well. We ultimately selected the Random Forest Classifier because it offered the most stable **F1-Score** against the imbalanced minority class (actual failures) while maintaining a lower risk of overfitting on unseen sensor noise compared to XGBoost.
+
+| Metric | Score | Note |
+| --- | --- | --- |
+| **Accuracy** | 98.0% | Overall correct predictions |
+| **F1-Score** | 0.59 | Harmonic mean of Precision and Recall on the minority (failure) class |
+| **Precision** | 0.97 | When it predicts failure, it is 97% correct |
+| **Recall** | 0.43 | Ability to catch actual failures amidst normal operations |
+
+<br>
+
+<div align="center">
+  <img src="models/confusion_matrix.png" alt="Random Forest Confusion Matrix" width="450"/>
+  <br>
+  <i>Fig 1: Confusion Matrix demonstrating the model's distinction between Normal Operation (0) and Imminent Failure (1).</i>
+</div>
+
+<br>
+
 ### 2. Live Telemetry Simulator (`simulator.py`)
 To mimic a real physical PLC (Programmable Logic Controller) or a SCADA system, this script acts as an eternal publisher.
 * **Natural Degradation Physics:** It generates initial stable parameters and slowly adds Gaussian noise to heat and torque profiles. 
